@@ -19,9 +19,7 @@ searchBtn.addEventListener('click', () => {
 const updateWeather = data => {
     document.getElementById('show-city').innerText = data.name || "Unknown Location!";
     document.getElementById('show-temperature').innerText = data.main.temp;
-    console.log(data.main);
-    console.log(data.weather[0].icon);
-
+    document.getElementById('weather_status').innerText = data.weather[0].main;
     document.getElementById('icon').setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
     document.getElementById('input-city').value = "";
 }
